@@ -78,3 +78,6 @@ const employees: Employee[] = [
 function getTotalSalary(employees: Employee[]): number [] {
     return employees.map(emp => emp.salary);
 }
+console.log(getTotalSalary(employees)); // [50000, 60000, 55000]
+
+//наследование интерфейсов
