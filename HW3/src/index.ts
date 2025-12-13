@@ -64,3 +64,17 @@ const calculateDiscount: CalculateDiscount = (product, discount) => {
 
 const product: Product = { name: "Laptop", price: 1000 };
 console.log(calculateDiscount(product, 10)); // 900
+
+//массив объектов и функции
+interface Employee {
+    name: string;
+    salary: number;
+}
+const employees: Employee[] = [
+    { name: "John", salary: 50000 },
+    { name: "Jane", salary: 60000 },
+    { name: "Doe", salary: 55000 }
+];
+function getTotalSalary(employees: Employee[]): number [] {
+    return employees.map(emp => emp.salary);
+}
