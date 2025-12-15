@@ -18,3 +18,12 @@ const isEmpty: StringToBooleanFunction = (str) => str.trim().length === 0;
 // Использование
 console.log(isEmpty("")); // true
 console.log(isEmpty("Hello")); // false
+
+//тип для функции сравнения двух строк
+type CompareStrings = (a: string, b: string) => boolean;
+
+const areStringsEqual: CompareStrings = (str1, str2) => str1 === str2;
+
+// Использование
+console.log(areStringsEqual("abc", "abc")); // true
+console.log(areStringsEqual("abc", "def")); // false
