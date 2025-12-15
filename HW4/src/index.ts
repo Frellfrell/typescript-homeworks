@@ -27,3 +27,6 @@ const areStringsEqual: CompareStrings = (str1, str2) => str1 === str2;
 // Использование
 console.log(areStringsEqual("abc", "abc")); // true
 console.log(areStringsEqual("abc", "def")); // false
+
+//Обобщённая функция getLastElement, возвращающая последний элемент массива любого типа.
+function getLastElement<T>(arr: T[]): T | undefined {
