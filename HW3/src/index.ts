@@ -101,3 +101,11 @@ function printStudentInfo(student: Student) {
 }
 
 printStudentInfo(student);
+
+//интерфейс функции с несколькими параметрами
+interface StringManipulator {
+    (str1: string, str2: string): string | boolean;
+}
+const concatenate: StringManipulator = (str1, str2) => str1 + str2;
+    console.log(concatenate("Hello, ", "World!")); // "Hello, World!"  
+
