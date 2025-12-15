@@ -81,3 +81,23 @@ function getTotalSalary(employees: Employee[]): number [] {
 console.log(getTotalSalary(employees)); // [50000, 60000, 55000]
 
 //наследование интерфейсов
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+
+interface Student extends Person {
+    grade: number;
+}
+
+const student: Student = {
+    firstName: "Alice",
+    lastName: "Johnson",
+    grade: 90
+};
+
+function printStudentInfo(student: Student) {
+    console.log(`${student.firstName} ${student.lastName}, Grade: ${student.grade}`);
+}
+
+printStudentInfo(student);
