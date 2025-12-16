@@ -30,3 +30,19 @@ console.log(areStringsEqual("abc", "def")); // false
 
 //Обобщённая функция getLastElement, возвращающая последний элемент массива любого типа.
 function getLastElement<T>(arr: T[]): T | undefined {
+    return arr[arr.length - 1];
+}
+
+// Использование
+console.log(getLastElement([1, 2, 3])); // 3
+console.log(getLastElement(["a", "b", "c"])); // "c"
+
+//Обобщённая функция makeTriple, создающая массив из трёх элементов одного типа.
+function makeTriple<T>(a: T, b: T, c: T): T[] {
+    return [a, b, c];
+}
+
+// Использование
+console.log(makeTriple(1, 2, 3)); // [1, 2, 3]
+console.log(makeTriple("a", "b", "c")); // ["a", "b", "c"]
+
