@@ -158,3 +158,28 @@ const checking = new CheckingAccount(100);
 checking.deposit(50);
 checking.withdraw(30);
 console.log("Checking balance:", checking.getBalance());
+
+
+//Media
+abstract class Media {
+     abstract play(): void;
+}
+
+class Audio extends Media {
+    play(): void {
+        console.log("Playing audio");
+    }
+}
+
+class Video extends Media {
+    play(): void {
+        console.log("Playing video");
+    }
+}
+
+const mediaList: Media[] = [
+    new Audio(),
+    new Video()
+];
+
+mediaList.forEach(media => media.play());
