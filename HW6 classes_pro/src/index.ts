@@ -100,3 +100,61 @@ appliances.forEach(appliance => {
     appliance.turnOn();
     appliance.turnOff();
 });
+// Account
+abstract class Account {
+
+     protected balance: number;
+
+    constructor(balance: number) {
+        this.balance = balance;
+    }
+    abstract deposit(amount: number): void;
+    abstract withdraw(amount: number): void;
+
+    getBalance(): number {
+        return this.balance;
+    }
+}
+class SavingsAccount extends Account {
+    private interestRate = 0.05;
+
+    deposit(amount: number): void {
+        this.balance += amount;
+        this.balance += this.balance * this.interestRate;
+    }
+
+    withdraw(amount: number): void {
+        if (amount <= this.balance) {
+            this.balance -= amount;
+        } else {
+            console.log("Not enough money");
+        }
+    }
+}
+
+class CheckingAccount extends Account {
+    private fee = 2;
+
+    deposit(amount: number): void {
+        this.balance += amount;
+    }
+
+    withdraw(amount: number): void {
+        const total = amount + this.fee;
+        if (total <= this.balance) {
+            this.balance -= total;
+        } else {
+            console.log("Not enough money (including fee)");
+        }
+    }
+}
+
+const savings = new SavingsAccount(100);
+savings.deposit(50);
+savings.withdraw(30);
+console.log("Savings balance:", savings.getBalance());
+
+const checking = new CheckingAccount(100);
+checking.deposit(50);
+checking.withdraw(30);
+console.log("Checking balance:", checking.getBalance());
