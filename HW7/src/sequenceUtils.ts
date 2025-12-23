@@ -1,9 +1,15 @@
 export function generateFibonacci(limit: number): number[] {
   const result = [0, 1];
 
-  while (true) {
-    const next = result[result.length - 1] + result[result.length - 2];
+   while (true) {
+    const last = result[result.length - 1];
+    const prev = result[result.length - 2];
+
+    if (last === undefined || prev === undefined) break;
+
+    const next = last + prev;
     if (next > limit) break;
+
     result.push(next);
   }
 
