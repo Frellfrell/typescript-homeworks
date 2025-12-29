@@ -4,3 +4,7 @@ export class AdminUser {
     public email: string,
     public isSuperAdmin: boolean = false
   ) {}
+
+  grantSuperAdmin(): void {
+    this.isSuperAdmin = true;
+  }
