@@ -8,3 +8,8 @@ export class AdminUser {
   grantSuperAdmin(): void {
     this.isSuperAdmin = true;
   }
+
+   revokeSuperAdmin(): void {
+    this.isSuperAdmin = false;
+  }
+}
