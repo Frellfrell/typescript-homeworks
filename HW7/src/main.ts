@@ -1,6 +1,6 @@
 import { capitalize, reverseString } from './stringUtils';
 import { Finance } from './finance';
-import { UserManagement } from './userManagement';
+import {  AdminUser } from './userManagement';
 import { generateFibonacci, generatePrimeNumbers } from './sequenceUtils';
 
 // Задание 1
@@ -15,7 +15,7 @@ const tax = Finance.TaxCalculator.calculateTax(50000, 13);
 console.log("Налог:", tax);
 
 // Задание 3
-const admin = new UserManagement.Admin.AdminUser(
+const admin = new AdminUser(
   "Иван",
   "ivan@example.com"
 );
