@@ -14,3 +14,18 @@ const processSequentially = async () => {
 };
 
 processSequentially();
+
+//создадим функцию для асинхронной обработки строки (например, преобразуем в верхний регистр).
+const processString = (str: string): Promise<string> => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(str.toUpperCase());
+    }, 1000); // задержка 1 секунда
+  });
+};
+const processArray = async (arr: string[]) => {
+  const results = await Promise.all(arr.map(processString)); // Обрабатываем строки параллельно
+  console.log(results);
+};
+
+processArray(['hello', 'world', 'async', 'await']);
