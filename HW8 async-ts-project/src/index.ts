@@ -29,3 +29,17 @@ const processArray = async (arr: string[]) => {
 };
 
 processArray(['hello', 'world', 'async', 'await']);
+
+//задание с ошибкой, которая будет возникать в одном из промисов.  обработать ошибку с помощью try/catch.
+
+const promiseWithDelay = (ms: number, shouldReject: boolean = false): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldReject) {
+        reject('Error occurred!');
+      } else {
+         resolve('Operation completed successfully');
+      }
+    }, ms);
+  });
+};
