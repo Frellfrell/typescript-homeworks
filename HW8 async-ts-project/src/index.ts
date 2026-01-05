@@ -1,0 +1,45 @@
+const delay = (ms: number): Promise<void> => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+const processSequentially = async () => {
+  console.log('Start');
+  await delay(1000);
+  console.log('First operation completed');
+  await delay(2000);
+  console.log('Second operation completed');
+  await delay(1500);
+  console.log('Third operation completed');
+  console.log('All operations completed');
+};
+
+processSequentially();
+
+//создадим функцию для асинхронной обработки строки (например, преобразуем в верхний регистр).
+const processString = (str: string): Promise<string> => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(str.toUpperCase());
+    }, 1000); // задержка 1 секунда
+  });
+};
+const processArray = async (arr: string[]) => {
+  const results = await Promise.all(arr.map(processString)); // Обрабатываем строки параллельно
+  console.log(results);
+};
+
+processArray(['hello', 'world', 'async', 'await']);
+
+//задание с ошибкой, которая будет возникать в одном из промисов.  обработать ошибку с помощью try/catch.
+
+const promiseWithDelay = (ms: number, shouldReject: boolean = false): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldReject) {
+        reject('Error occurred!');
+      } else {
+         resolve('Operation completed successfully');
+      }
+    }, ms);
+  });
+};
