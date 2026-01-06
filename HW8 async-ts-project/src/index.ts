@@ -48,3 +48,7 @@ const processParallelWithError = async () => {
   try {
     const results = await Promise.all([
       promiseWithDelay(1000),
+       promiseWithDelay(2000),
+      promiseWithDelay(1500, true), // этот промис завершится с ошибкой
+    ]);
+    
