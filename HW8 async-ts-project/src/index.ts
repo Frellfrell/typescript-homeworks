@@ -43,3 +43,28 @@ const promiseWithDelay = (ms: number, shouldReject: boolean = false): Promise<st
     }, ms);
   });
 };
+
+const processParallelWithError = async () => {
+  try {
+    const results = await Promise.all([
+      promiseWithDelay(1000),
+       promiseWithDelay(2000),
+      promiseWithDelay(1500, true), // этот промис завершится с ошибкой
+    ]);
+     console.log(results);
+  } catch (error) {
+    console.error('Caught an error:', error);
+  }
+};
+
+processParallelWithError();
+
+//Асинхронная функция с динамическим временем выполнения
+//функцию, которая принимает массив чисел и на основе этих чисел создаёт промисы с разными задержками.
+const delayWithNumber = (ms: number): Promise<number> => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(ms);// возвращаем задержку как результат
+    }, ms);
+  });
+};
