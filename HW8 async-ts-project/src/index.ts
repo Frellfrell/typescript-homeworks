@@ -55,4 +55,7 @@ const processParallelWithError = async () => {
   } catch (error) {
     console.error('Caught an error:', error);
   }
+};
+
+processParallelWithError();
     
