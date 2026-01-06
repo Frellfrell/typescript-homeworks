@@ -46,3 +46,5 @@ const promiseWithDelay = (ms: number, shouldReject: boolean = false): Promise<st
 
 const processParallelWithError = async () => {
   try {
+    const results = await Promise.all([
+      promiseWithDelay(1000),
