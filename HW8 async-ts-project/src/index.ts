@@ -43,3 +43,6 @@ const promiseWithDelay = (ms: number, shouldReject: boolean = false): Promise<st
     }, ms);
   });
 };
+
+const processParallelWithError = async () => {
+  try {
