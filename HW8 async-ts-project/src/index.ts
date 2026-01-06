@@ -52,4 +52,7 @@ const processParallelWithError = async () => {
       promiseWithDelay(1500, true), // этот промис завершится с ошибкой
     ]);
      console.log(results);
+  } catch (error) {
+    console.error('Caught an error:', error);
+  }
     
