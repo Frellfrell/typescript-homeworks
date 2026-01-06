@@ -58,4 +58,13 @@ const processParallelWithError = async () => {
 };
 
 processParallelWithError();
-    
+
+//Асинхронная функция с динамическим временем выполнения
+//функцию, которая принимает массив чисел и на основе этих чисел создаёт промисы с разными задержками.
+const delayWithNumber = (ms: number): Promise<number> => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(ms);// возвращаем задержку как результат
+    }, ms);
+  });
+};
