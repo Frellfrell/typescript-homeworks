@@ -68,3 +68,6 @@ const delayWithNumber = (ms: number): Promise<number> => {
     }, ms);
   });
 };
+
+const processNumbers = async (numbers: number[]) => {
+  const results = await Promise.all(numbers.map(delayWithNumber));
