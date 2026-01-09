@@ -9,3 +9,15 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello from Express + TypeScript!");
 });
+
+// POST маршрут
+app.post("/data", (req: Request, res: Response) => {
+  const body = req.body;
+
+  res.json({
+    message: "Данные получены",
+    data: body
+  });
+});
+
+// Запуск сервера
