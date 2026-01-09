@@ -21,3 +21,6 @@ app.post("/data", (req: Request, res: Response) => {
 });
 
 // Запуск сервера
+app.listen(PORT, () => {
+  console.log(`Сервер запущен на http://localhost:${PORT}`);
+});
